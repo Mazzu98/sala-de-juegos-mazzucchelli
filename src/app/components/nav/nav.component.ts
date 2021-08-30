@@ -10,7 +10,7 @@ export class NavComponent implements OnInit {
   loggedIn: boolean;
 
   constructor() {
-    this.loggedIn = true;
+    this.loggedIn = false;
   }
 
   ngOnInit() {
