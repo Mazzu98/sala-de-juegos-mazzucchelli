@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row m-0 w-100 h-100 align-items-center ">
       <div class="col-12 d-flex justify-content-between">
-        <button class="btn btn-warning btn-pac" >Quien Soy</button>
+        <button class="btn btn-warning btn-pac" [routerLink]="['/quien-soy']" >Quien Soy</button>
         <div *ngIf="this.loggedIn" class="dropdown">
           <div class="profile-circle dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="./../../../assets/images/red-ghost.png" alt="">
