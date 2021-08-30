@@ -3,3 +3,50 @@
         background-color: transparent !important;
     }
 }
+
+.login{
+    position: relative;
+    animation: .5s ease-out 0s 1 loginDrop;
+}
+
+@keyframes loginDrop{
+    0%{transform: translateY(-100%);}
+    100%{transform: translateY(0);}
+}
+
+.juegos-title{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.f-pacman{
+    font-family: Pac-man;
+    color: yellow;
+}
+
+.red-ghost{
+    color: red;
+}
+
+.blue-ghost{
+    color: lightblue;
+}
+
+.pink-ghost{
+    color: pink;
+}
+
+.form-floating input{
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid yellow;
+}
+.form-floating label{
+    color: #fff;
+}
+
+.form-floating input:focus{
+    box-shadow: none;
+}
+
