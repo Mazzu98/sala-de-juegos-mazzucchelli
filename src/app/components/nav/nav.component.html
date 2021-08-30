@@ -2,15 +2,18 @@
   <div class="container">
     <div class="row m-0 w-100 h-100 align-items-center ">
       <div class="col-12 d-flex justify-content-between">
-        <button class="btn btn-warning btn-pac" [routerLink]="['/quien-soy']" >Quien Soy</button>
+        <div class="d-flex gap-2">
+          <button *ngIf="router.url !== '/quien-soy'" class="btn btn-warning btn-pac" [routerLink]="['/quien-soy']" >Quien Soy</button>
+          <button *ngIf="router.url !== '/home' && router.url !== '/login'" class="btn btn-warning btn-pac" [routerLink]="['/home']" >Home</button>
+        </div>
         <div *ngIf="this.loggedIn" class="dropdown">
           <div class="profile-circle dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="./../../../assets/images/red-ghost.png" alt="">
           </div>
           <ul class="bg-dark dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">usuario bla bla</a></li>
-            <li><a class="dropdown-item" href="#">Desloguearse</a></li>
+            <li><a class="dropdown-item" >Action</a></li>
+            <li><a class="dropdown-item" >usuario bla bla</a></li>
+            <li><a class="dropdown-item logout">Desloguearse</a></li>
           </ul>
         </div>
         <!-- <button class="btn btn-outline-warning btn-pac-outline" >Desloguearse</button> -->

@@ -86,3 +86,12 @@
   -webkit-animation-name: slideIn;
   animation-name: slideIn;
 }
+
+.logout{
+  color: red !important;
+}
+
+.dropdown-item:hover{
+  background-color: #323232;
+  cursor: pointer;
+}
