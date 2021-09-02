@@ -1,0 +1,42 @@
+@media (max-width: 500px) {
+    .bg-light{
+        background-color: transparent !important;
+    }
+}
+
+.juegos-title{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.f-pacman{
+    font-family: Pac-man;
+    color: yellow;
+}
+
+.red-ghost{
+    color: red;
+}
+
+.blue-ghost{
+    color: lightblue;
+}
+
+.pink-ghost{
+    color: pink;
+}
+
+.form-floating input{
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid yellow;
+}
+.form-floating label{
+    color: #fff;
+}
+
+.form-floating input:focus{
+    box-shadow: none;
+}
+
