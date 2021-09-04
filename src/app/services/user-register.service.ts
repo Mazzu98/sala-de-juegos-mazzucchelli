@@ -11,7 +11,7 @@ export class UserRegisterService {
   constructor(private af: AngularFirestore) { }
 
   userRegistrer(data:any){
-    this.af.collection(this.collectionName).add(data)
+    this.af.collection(this.collectionName).add(data);
   }
 
   

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/classes/user.class';
 import { AuthService } from 'src/app/services/auth.service';
@@ -13,6 +14,8 @@ export class LoginComponent implements OnInit {
   
   user: User;
 
+  registroForm = new FormGroup({});
+
   constructor( private auth:AuthService, private router: Router, public afs: UserRegisterService) {
       this.user = new User();
   }
@@ -21,14 +24,18 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.auth.login(this.user).then(()=>{
-      let date = new Date();
-      this.afs.userRegistrer({fecha: this.getDateFormat(date), usuario: this.auth.userName});
-      this.router.navigateByUrl("/home");
-    })
-    .catch(()=>{
-      
-    });
+
+    if(this.user.email != "" && this.user.email != ""){
+      this.auth.login(this.user).then(()=>{
+        let date = new Date();
+        this.afs.userRegistrer({fecha: this.getDateFormat(date), usuario: this.auth.userName});
+        this.router.navigateByUrl("/home");
+      })
+      .catch(()=>{
+        
+      });
+    }
+
   }
 
   register(){
@@ -44,5 +51,8 @@ export class LoginComponent implements OnInit {
     return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
   }
 
+  ngAfterViewOnInit(){
+    
+  }
 
 }
