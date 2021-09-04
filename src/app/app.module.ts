@@ -15,6 +15,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule}  from '@angular/fire/compat/firestore';
+import { ToastModule } from 'primeng/toast';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AngularFirestoreModule}  from '@angular/fire/compat/firestore';
     AngularFireModule.initializeApp(environment.firebaseConfig),
 	  AngularFireAuthModule,
     FormsModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ToastModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
