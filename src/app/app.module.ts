@@ -9,6 +9,12 @@ import { QuienSoyComponent } from './pages/quien-soy/quien-soy.component';
 import { NavComponent } from './components/nav/nav.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ErrorComponent } from './pages/error/error.component';
+import { FormsModule } from '@angular/forms';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule}  from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
@@ -22,7 +28,11 @@ import { ErrorComponent } from './pages/error/error.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+	  AngularFireAuthModule,
+    FormsModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

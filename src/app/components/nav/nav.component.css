@@ -36,7 +36,20 @@
 
 .dropdown-menu li a{
     color: yellow;
-    margin: 10px 0px;
+    padding: 0;
+    margin: 8px 12px;
+    width: 80%;
+}
+
+.dropdown-menu li a:hover{
+  background-color: rgb( 33, 37, 41);
+  transition: all .2s ease-out;
+  transform: scale(1.1);
+}
+
+.dropdown-menu li {
+  padding: 0 ;
+
 }
 
 .animate {
@@ -87,11 +100,28 @@
   animation-name: slideIn;
 }
 
-.logout{
-  color: red !important;
-}
-
 .dropdown-item:hover{
   background-color: #323232;
   cursor: pointer;
+}
+
+.user-name{
+  font-size: 20px;
+  margin-top: 0px !important;
+  
+}
+
+.user-name:hover{
+  transform: scale(1) !important;
+}
+
+.logout{
+  display: inline;
+  font-size: 25px;
+  color: red !important;
+}
+
+.spliter{
+  height: 2px;
+  background-color: yellow;
 }

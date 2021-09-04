@@ -21,9 +21,41 @@ body{
     transition: all .3s ease-out;
 }
 
+.btn-pac-outline{
+    border: yellow solid 2px;
+    color: yellow;
+    transition: all .3s ease-out;
+
+}
+
 .btn-pac:hover{
     background-color: yellow;
     transform: scale(1.05);
+}
+
+.btn-pac-outline:hover{
+    background-color: transparent;
+    border: yellow solid 2px;
+    color: yellow;
+    transform: scale(1.05);
+}
+
+.btn-red-outline{
+    border: red solid 2px;
+    color: red;
+    transition: all .3s ease-out;
+}
+
+.btn-red-outline:hover{
+    background-color: transparent;
+    border: red solid 2px;
+    color: red;
+    transform: scale(1.05);
+}
+
+.btn-pac-outline:focus,
+.btn-pac-outline:active{
+    box-shadow: none;
 }
 
 .btn-pac:focus,

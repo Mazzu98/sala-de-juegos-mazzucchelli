@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "sala-de-juegos-3184b": {
+      "hosting": {
+        "sala-de-juegos-mazzucchelli": [
+          "sala-de-juegos-3184b"
+        ]
+      }
+    }
+  }
+}
