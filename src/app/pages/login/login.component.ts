@@ -44,7 +44,9 @@ export class LoginComponent implements OnInit {
             fecha: this.getDateFormat(date),
             usuario: this.auth.userName,
           });
+          
           this.router.navigateByUrl('/home');
+          
         })
         .catch(() => {
           this.showError("Alguno de los datos es incorrecto");
