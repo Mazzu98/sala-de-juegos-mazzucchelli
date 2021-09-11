@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { ChatService } from 'src/app/services/chat.service';
 import { Renderer2 } from '@angular/core';
 import { ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chat',
@@ -16,7 +17,10 @@ export class ChatComponent implements OnInit, AfterViewChecked{
   messages:any;
   message: any;
 
-  constructor(private chatS: ChatService, public auth:AuthService, private render: Renderer2) { 
+  constructor(private chatS: ChatService, public auth:AuthService, route:Router, private render: Renderer2) { 
+    if(!this.auth.isLogged){
+      route.navigateByUrl("/login");
+    }
     this.messages = chatS.items;
     this.scrollToBottom();
   }
