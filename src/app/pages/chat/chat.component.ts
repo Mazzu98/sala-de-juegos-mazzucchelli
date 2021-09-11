@@ -22,9 +22,7 @@ export class ChatComponent implements OnInit, AfterViewChecked{
   }
 
   send(){
-    this.chat.nativeElement.scrollTop = -100;
-    let now = new Date();
-    let timeNow = now.getHours() + ":" + now.getMinutes();
+    let timeNow = this.formatDate(new Date());
     let message = {
       text: this.message,
       date: timeNow,
@@ -32,7 +30,14 @@ export class ChatComponent implements OnInit, AfterViewChecked{
     }
     this.chatS.sendMessage(message).then(()=>{
       this.message = "";
+      this.scrollToBottom();
     });
+  }
+
+  EnterSubmit($event){
+    if($event.key == "Enter"){
+      this.send();
+    }
   }
 
   ngAfterViewChecked() {        
@@ -46,6 +51,20 @@ export class ChatComponent implements OnInit, AfterViewChecked{
   }
 
   ngOnInit(): void {
+  }
+
+  formatDate(date: Date){
+    let hours = date.getHours();
+    let minutes =  date.getMinutes();
+    let time;
+    if(minutes < 10){
+      time = hours + ":0" + minutes; 
+    }
+    else{
+      time = hours + ":" + minutes; 
+    }
+    
+    return time;
   }
 
 }

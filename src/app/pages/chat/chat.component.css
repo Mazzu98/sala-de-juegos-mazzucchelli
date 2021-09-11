@@ -63,12 +63,18 @@ p {
   background-color: yellow;
   color: #101010;
   margin: 10px 0;
+  max-width: 80%;
+}
+
+.message p{
+  overflow-wrap: break-word;
 }
 
 .message span {
   position: absolute;
   color: yellow;
   bottom: -25px;
+  
 }
 
 .message-container {
