@@ -18,9 +18,6 @@ export class ChatComponent implements OnInit, AfterViewChecked{
   message: any;
 
   constructor(private chatS: ChatService, public auth:AuthService, route:Router, private render: Renderer2) { 
-    if(!this.auth.isLogged){
-      route.navigateByUrl("/login");
-    }
     this.messages = chatS.items;
     this.scrollToBottom();
   }
