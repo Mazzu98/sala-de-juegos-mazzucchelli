@@ -18,6 +18,7 @@ export class ChatComponent implements OnInit, AfterViewChecked{
 
   constructor(private chatS: ChatService, public auth:AuthService, private render: Renderer2) { 
     this.messages = chatS.items;
+    this.scrollToBottom();
   }
 
   send(){
