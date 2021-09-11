@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="chat-container">
+  <div #chat class="chat-container">
     <div *ngFor="let message of messages | async" [ngClass]="{'me': message.user == this.auth.userName,'other':message.user != this.auth.userName }"  class="w-100 message-container my-2">
         <div class="message">
             <h6>{{message.user}}</h6>
