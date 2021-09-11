@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AhorcadoComponent } from './pages/ahorcado/ahorcado.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent,},
   {path: 'quien-soy', component: QuienSoyComponent},
   {path: 'chat', component: ChatComponent},
+  {path: 'ahorcado', component: AhorcadoComponent},
   {path: '**', component: ErrorComponent}
 ];
 

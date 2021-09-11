@@ -1,0 +1,132 @@
+
+.hang-container{
+    position: relative;
+    width: 350px;
+    height: 400px;
+}
+
+.stick{
+    position: absolute;
+    background-color: #000;
+    height: 10px
+}
+
+.bot-stick{
+    bottom: 10px;
+    left: 0;
+    width: 200px;
+}
+
+.vertical-stick{
+    bottom: 180px;
+    left: -110px;
+    width: 330px;
+    transform-origin: center;
+    transform: rotate(90deg);
+}
+
+.horizontal-stick{
+    bottom: 350px;
+    left: 50px;
+    width: 180px;
+}
+
+.diagonal-stick{
+    bottom: 315px;
+    left: 40px;
+    width: 100px;
+    transform-origin: center;
+    transform: rotate(-45deg);
+}
+
+.rope{
+    position: absolute;
+    background-color: #000;
+    height: 3px;
+    bottom: 330px;
+    left: 200px;
+    width: 50px;
+    transform-origin: center;
+    transform: rotate(90deg);
+}
+
+.body{
+    position: absolute;
+    background-color: yellow;
+    width: 5px;
+}
+
+.head{
+    bottom: 250px;
+    left: 195px;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    background-color: transparent;
+    border:5px solid yellow;
+}
+
+.chest{
+    bottom: 135px;
+    left: 222px;
+    height: 120px;
+}
+
+.left-arm{
+    bottom: 185px;
+    left: 200px;
+    height: 60px;
+    transform: rotate(45deg);
+}
+
+.rigth-arm{
+    bottom: 185px;
+    left: 244px;
+    height: 60px;
+    transform: rotate(-45deg);
+}
+
+.left-leg{
+    bottom: 85px;
+    left: 200px;
+    height: 60px;
+    transform: rotate(45deg);
+}
+
+.rigth-leg{
+    bottom: 85px;
+    left: 244px;
+    height: 60px;
+    transform: rotate(-45deg);
+}
+
+.key{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    color: yellow;
+    border: 1px solid yellow;
+    border-radius: 5px;
+}
+
+.letter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow;
+    width: 25px;
+    height: 40px;
+    border-bottom:2px solid yellow;
+}
+
+.error-letter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    opacity: .8;
+    width: 25px;
+    height: 40px;
+}

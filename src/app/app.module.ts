@@ -18,6 +18,7 @@ import { AngularFirestoreModule}  from '@angular/fire/compat/firestore';
 import { ToastModule } from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatComponent } from './pages/chat/chat.component';
+import { AhorcadoComponent } from './pages/ahorcado/ahorcado.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ChatComponent } from './pages/chat/chat.component';
     RegisterComponent,
     ErrorComponent,
     ChatComponent,
+    AhorcadoComponent,
   ],
   imports: [
     BrowserModule,

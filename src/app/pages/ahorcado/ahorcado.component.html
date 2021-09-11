@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row justify-content-center mt-3 mt-lg-5">
+        <div class="col-12 col-md-8 col-lg-5 rounded bg-dark d-flex justify-content-center">
+            <div class="hang-container" >
+                <div class="stick bot-stick" ></div>
+                <div class="stick vertical-stick" ></div>
+                <div class="stick horizontal-stick" ></div>
+                <div class="stick diagonal-stick" ></div>
+                <div class="rope" ></div>
+                <div class="body head"></div>
+                <div class="body chest"></div>
+                <div class="body left-arm"></div>
+                <div class="body rigth-arm"></div>
+                <div class="body left-leg"></div>
+                <div class="body rigth-leg"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-2">
+        <div class="bg-dark p-4 rounded col-12 col-md-8 col-lg-5 d-flex flex-wrap justify-content-center">
+            <div #letters class="col-12 d-flex justify-content-center gap-3 mb-4">
+                <div *ngFor="let letter of this.word" class="letter">
+                    <div class="d-none">
+                        {{letter}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-center flex-wrap gap-1 mb-5">
+                <div *ngFor="let key of keys" class="key" > 
+                    {{key}}
+                </div>
+            </div> 
+            <div class="col-12 d-flex justify-content-center gap-3">
+                <div *ngFor="let letter of this.errorLetters" class="error-letter">
+                    {{letter}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
