@@ -17,6 +17,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule}  from '@angular/fire/compat/firestore';
 import { ToastModule } from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ChatComponent } from './pages/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     QuienSoyComponent,
     NavComponent,
     RegisterComponent,
-    ErrorComponent
+    ErrorComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

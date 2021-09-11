@@ -1,0 +1,95 @@
+.input-bar{
+    position: fixed;
+    z-index: 100;
+    height: 60px;
+    bottom: 20px;
+    border-radius: 30px;
+}
+
+.chat-container{
+    height: calc(100vh - 150px);
+    overflow-y: scroll;
+}
+
+.input{
+    flex-grow: 3;
+}
+
+input{
+    flex-grow: 3;
+    background-color: #101010;
+    border-radius: 17px;
+}
+
+input:active,
+input:focus{
+    box-shadow: none;
+    border: 1px solid yellow;
+    background-color: #101010;
+    color: yellow;
+}
+
+.send-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: yellow;
+    height: 40px;
+    width: 40px;
+}
+
+.send-btn img{
+margin-left: 5px;
+    width: 60%;
+    height: 60%;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+}
+
+.message{
+    position: relative;
+    display:inline-block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: yellow;
+    color: #101010 ;
+    margin: 10px 0;
+}
+
+.message span{
+    position: absolute;
+    color: yellow;
+    bottom: -25px;
+}
+
+.message-container{
+    display: flex;
+}
+
+.me.message-container{
+    justify-content: right;
+}
+
+.other.message-container{
+    justify-content: start;
+}
+
+.other .message{
+    text-align: left;
+}
+
+.me .message{
+    text-align: right;
+}
+
+.me .message span{
+    left: 0;
+}
+
+.other .message span{
+    right: 0;
+}
+
