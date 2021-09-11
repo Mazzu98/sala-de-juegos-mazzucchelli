@@ -23,6 +23,7 @@ export class AhorcadoComponent implements OnInit, AfterViewInit {
   errorLetters;
   failTriesCont;
   hitsCont;
+  refsToReset = [];
   constructor(public render: Renderer2, private messageService:MessageService) {
     this.hitsCont = 0;
     this.failTriesCont = 0;
@@ -45,6 +46,7 @@ export class AhorcadoComponent implements OnInit, AfterViewInit {
     let success = false;
     if(this.checkTries()){
       this.render.setProperty(refEl, 'disabled', true);
+      this.refsToReset.push(refEl);
       for(let i = 0; i < this.letters.nativeElement.childNodes.length ; i++){
         let element = this.letters.nativeElement.childNodes[i];
         if(element.lastChild !== null){
@@ -122,6 +124,26 @@ export class AhorcadoComponent implements OnInit, AfterViewInit {
     this.failTriesCont = 0;
     this.word = this.getRadomWord(this.words).split('');
     this.errorLetters = [];
+
+    for(let i = 0; i < this.letters.nativeElement.childNodes.length ; i++){
+      let element = this.letters.nativeElement.childNodes[i];
+      if(element.lastChild !== null){
+        this.render.addClass(element.childNodes[0],'d-none');
+      }
+    }
+    this.refsToReset.forEach(element => {
+      this.render.setProperty(element, 'disabled', false);
+    });
+
+    this.render.addClass(this.head.nativeElement,'d-none');
+    this.render.addClass(this.body.nativeElement,'d-none');
+    this.render.addClass(this.leftArm.nativeElement,'d-none');
+    this.render.addClass(this.rigthArm.nativeElement,'d-none');
+    this.render.addClass(this.leftLeg.nativeElement,'d-none');
+    this.render.addClass(this.rigthLeg.nativeElement,'d-none');
+
+
   }
+
 
 }
