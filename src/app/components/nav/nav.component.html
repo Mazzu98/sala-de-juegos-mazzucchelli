@@ -6,6 +6,7 @@
           <button *ngIf="router.url !== '/quien-soy'" class="btn btn-warning btn-pac" [routerLink]="['/quien-soy']" >Quien Soy</button>
           <button *ngIf="router.url !== '/home' && this.auth.isLogged" class="btn btn-warning btn-pac" [routerLink]="['/home']" >Home</button>
           <button *ngIf="router.url == '/quien-soy' && !this.auth.isLogged" class="btn btn-warning btn-pac" [routerLink]="['/login']" >Login</button>
+          <button *ngIf="router.url == '/home' && this.auth.isLogged" class="btn btn-warning btn-pac" [routerLink]="['/chat']" >Chat</button>
         </div>
         <div *ngIf="this.auth.isLogged" class="dropdown">
           <div class="profile-circle dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
