@@ -12,7 +12,7 @@
     <div class="input-bar col-11 col-md-8 bg-dark">
       <div class="w-100 h-100 d-flex align-items-center px-3 gap-3">
         <div  class="input">
-          <input [(ngModel)]="message" (keydown)="EnterSubmit($event)" type="text" class="form-control" id="inputPassword" />
+          <input [(ngModel)]="message" (keydown)="EnterSubmit($event)" type="text" class="form-control" id="inputPassword" autocomplete="off" />
         </div>
         <div (click)="send()" class="send-btn">
             <img src="./../../../assets/images/send.png" alt="">
