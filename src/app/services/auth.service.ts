@@ -9,7 +9,7 @@ export class AuthService {
   
   isLogged: any = false;
   userName: any;
-
+  
   constructor(private afAuth: AngularFireAuth, private router: Router) {
     afAuth.authState.subscribe((user) => (this.isLogged = user));
     afAuth.onAuthStateChanged((user: any) => {
