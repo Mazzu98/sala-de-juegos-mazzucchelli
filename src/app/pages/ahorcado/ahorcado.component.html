@@ -7,12 +7,12 @@
                 <div class="stick horizontal-stick" ></div>
                 <div class="stick diagonal-stick" ></div>
                 <div class="rope" ></div>
-                <div class="body head"></div>
-                <div class="body chest"></div>
-                <div class="body left-arm"></div>
-                <div class="body rigth-arm"></div>
-                <div class="body left-leg"></div>
-                <div class="body rigth-leg"></div>
+                <div #head class="body head d-none"></div>
+                <div #body class="body chest d-none"></div>
+                <div #leftArm class="body left-arm d-none"></div>
+                <div #rigthArm class="body rigth-arm d-none"></div>
+                <div #leftLeg class="body left-leg d-none"></div>
+                <div #rigthLeg class="body rigth-leg d-none"></div>
             </div>
         </div>
     </div>
@@ -25,10 +25,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 d-flex justify-content-center flex-wrap gap-1 mb-5">
-                <div *ngFor="let key of keys" class="key" > 
+            <div class="col-12 d-flex justify-content-center flex-wrap gap-1 mb-4">
+                <button #btn (click)="keyClick(btn,key)" *ngFor="let key of keys" class="key" > 
                     {{key}}
-                </div>
+                </button>
             </div> 
             <div class="col-12 d-flex justify-content-center gap-3">
                 <div *ngFor="let letter of this.errorLetters" class="error-letter">
@@ -37,4 +37,5 @@
             </div>
         </div>
     </div>
+    <p-toast position="bottom-center" key="bc"></p-toast>
 </div>

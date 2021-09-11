@@ -109,6 +109,12 @@
     color: yellow;
     border: 1px solid yellow;
     border-radius: 5px;
+    background-color: transparent;
+}
+
+.key:disabled{
+    border: 1px solid #d4d4d4;
+    color: #d4d4d4;
 }
 
 .letter{
@@ -126,6 +132,8 @@
     justify-content: center;
     align-items: center;
     color: red;
+    font-size: 20px ;
+    font-weight: 700;
     opacity: .8;
     width: 25px;
     height: 40px;
