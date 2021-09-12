@@ -1,0 +1,66 @@
+.my-card{
+    position: absolute;
+    height: 350px;
+    width: 250px;
+    border-radius: 20px;
+    border: 3px solid yellow;
+    transition: all 1s ease-out;
+}
+
+.number-top{
+    position: absolute;
+    top:-15px;
+    left:15px;
+    color: yellow;
+    font-size: 80px;
+}
+
+.number-bottom{
+    position: absolute;
+    bottom:-5px;
+    right:15px;
+    color: yellow;
+    font-size: 80px;
+}
+
+.circle{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    border: 3px solid yellow;
+    background-color: transparent;
+    border-radius: 100%;
+    
+}
+
+.circle.big{
+    width: 120px;
+    height: 120px;
+}
+
+.circle.small{
+    width: 60px;
+    height: 60px;
+}
+
+.hide{
+    transform: translateY(-200%);
+}
+
+.shaking{
+    animation: shake .2s infinite ease-out;
+}
+
+@keyframes shake {
+    0%{transform: rotate(7deg);}
+    25%{transform: rotate(0deg);}
+    50%{transform: rotate(-7deg);}
+    75%{transform: rotate(0deg);}
+    100%{transform: rotate(7deg);}
+
+}
+
+.card-cont{
+    height: 350px;
+    width: 250px;
+}

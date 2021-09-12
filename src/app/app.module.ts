@@ -19,6 +19,7 @@ import { ToastModule } from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatComponent } from './pages/chat/chat.component';
 import { AhorcadoComponent } from './pages/ahorcado/ahorcado.component';
+import { MayomenorComponent } from './pages/mayomenor/mayomenor.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AhorcadoComponent } from './pages/ahorcado/ahorcado.component';
     ErrorComponent,
     ChatComponent,
     AhorcadoComponent,
+    MayomenorComponent,
   ],
   imports: [
     BrowserModule,
