@@ -8,7 +8,7 @@
         d-flex
         flex-wrap
         justify-content-center
-        p-4
+        p-5
       "
     >
       <div class="card-cont">
@@ -28,14 +28,21 @@
     </div>
     <div class="row mt-5 justify-content-center">
         <div class="col-12 col-md-8 col-lg-5 d-flex justify-content-around">
-            <div class="col-4">
-                <button (click)="mayoromenor('menor')" class="btn btn-pac w-100">Menor</button>
+            <div class="col-5">
+                <button #btnm (click)="mayoromenor('menor')" class="btn btn-pac w-100">Menor</button>
             </div> 
-            <div class="col-4 d-flex">
-                <button (click)="mayoromenor('mayor')" class="btn btn-pac w-100">Mayor</button>
+            <div class="col-5 d-flex">
+                <button #btnM (click)="mayoromenor('mayor')" class="btn btn-pac w-100">Mayor</button>
             </div> 
         </div>
     </div>
+    <div class="row mt-5 justify-content-center">
+      <div class="col-12 col-md-8 col-lg-5 d-flex justify-content-around">
+          <div class="col-6 col-md-4">
+              <button #btnr (click)="reserGame()" class="btn btn-pac w-100">Volver a Jugar</button>
+          </div> 
+      </div>
+  </div>
   </div>
   <p-toast position="top-center" key="bc"></p-toast>
 </div>
