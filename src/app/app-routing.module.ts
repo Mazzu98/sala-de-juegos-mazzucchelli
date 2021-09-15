@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'home', component: HomeComponent,},
   {path: 'quien-soy', component: QuienSoyComponent},
-  {path: 'chat', component: ChatComponent},
+  {path: 'chat', component: ChatComponent, canActivate:[AuthGuard]},
   {path: 'ahorcado', component: AhorcadoComponent},
   {path: 'mayoromenor', component: MayomenorComponent},
   {path: '**', component: ErrorComponent}
