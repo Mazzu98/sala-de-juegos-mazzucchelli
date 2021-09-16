@@ -18,8 +18,7 @@ import { AngularFirestoreModule}  from '@angular/fire/compat/firestore';
 import { ToastModule } from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatComponent } from './pages/chat/chat.component';
-import { AhorcadoComponent } from './pages/ahorcado/ahorcado.component';
-import { MayomenorComponent } from './pages/mayomenor/mayomenor.component';
+import { MayomenorModule } from './pages/mayomenor/mayomenor.module'
 
 @NgModule({
   declarations: [
@@ -31,8 +30,6 @@ import { MayomenorComponent } from './pages/mayomenor/mayomenor.component';
     RegisterComponent,
     ErrorComponent,
     ChatComponent,
-    AhorcadoComponent,
-    MayomenorComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +39,8 @@ import { MayomenorComponent } from './pages/mayomenor/mayomenor.component';
     FormsModule,
     AngularFirestoreModule,
     ToastModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MayomenorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
