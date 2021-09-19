@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row justify-content-center mt-5 py-5">
+    <div
+      class="
+        col-12 col-md-8 col-lg-5
+        rounded
+        bg-dark
+        d-flex
+        flex-wrap
+        justify-content-center
+        p-5
+        text-center
+      "
+    >
+    <div>
+        <h4>Detener el conteo en 5:00 </h4>
+        <h1 class="counter py-5">{{countS}}:{{countM | number: '2.'}}</h1>
+    </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <div class="col-12 col-md-8 col-lg-5 d-flex justify-content-center gap-5">
+        <div class="col-5">
+          <button #btnEmpezar (click)="startCount()" class="btn btn-pac w-100">Empezar</button>
+        </div>
+        <div class="col-5 ">
+            <button #btnDetener (click)="stopCounter()" class="btn btn-pac w-100">Detener</button>
+          </div>
+      </div>
+    </div>
+  </div>
+  <p-toast position="top-center" key="bc"></p-toast>
+</div>

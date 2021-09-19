@@ -108,7 +108,6 @@ export class AhorcadoComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(){
-    console.log(this.word);
   }
 
   showToast(message: string, color: string ) {

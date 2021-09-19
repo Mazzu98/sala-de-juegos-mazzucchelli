@@ -19,6 +19,7 @@ const routes: Routes = [
   {path: 'chat', component: ChatComponent, canActivate:[AuthGuard]},
   {path: 'ahorcado', loadChildren: ()=> import('./pages/ahorcado/ahorcado.module').then(m=> m.AhorcadoModule)},
   {path: 'mayoromenor', loadChildren: ()=> import('./pages/mayomenor/mayomenor.module').then(m=> m.MayomenorModule)},
+  {path: 'acierta', loadChildren: ()=> import('./pages/countdown/countdown.module').then(m=> m.CountdownModule)},
   {path: '**', component: ErrorComponent}
 ];
 

@@ -18,7 +18,7 @@ import { AngularFirestoreModule}  from '@angular/fire/compat/firestore';
 import { ToastModule } from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatComponent } from './pages/chat/chat.component';
-import { MayomenorModule } from './pages/mayomenor/mayomenor.module'
+import { MayomenorModule } from './pages/mayomenor/mayomenor.module';
 
 @NgModule({
   declarations: [
