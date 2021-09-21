@@ -19,6 +19,8 @@ import { ToastModule } from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ChatComponent } from './pages/chat/chat.component';
 import { MayomenorModule } from './pages/mayomenor/mayomenor.module';
+import { PreguntadosModule } from './pages/preguntados/preguntados.module';
+import { PreguntaComponent } from './components/pregunta/pregunta.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { MayomenorModule } from './pages/mayomenor/mayomenor.module';
     RegisterComponent,
     ErrorComponent,
     ChatComponent,
+    PreguntaComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { MayomenorModule } from './pages/mayomenor/mayomenor.module';
     AngularFirestoreModule,
     ToastModule,
     BrowserAnimationsModule,
-    MayomenorModule
+    MayomenorModule,
+    PreguntadosModule
   ],
   providers: [],
   bootstrap: [AppComponent]

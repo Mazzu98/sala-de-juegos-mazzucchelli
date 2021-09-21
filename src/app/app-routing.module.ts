@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AhorcadoComponent } from './pages/ahorcado/ahorcado.component';
 import { ChatComponent } from './pages/chat/chat.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -20,6 +19,7 @@ const routes: Routes = [
   {path: 'ahorcado', loadChildren: ()=> import('./pages/ahorcado/ahorcado.module').then(m=> m.AhorcadoModule)},
   {path: 'mayoromenor', loadChildren: ()=> import('./pages/mayomenor/mayomenor.module').then(m=> m.MayomenorModule)},
   {path: 'acierta', loadChildren: ()=> import('./pages/countdown/countdown.module').then(m=> m.CountdownModule)},
+  {path: 'preguntados', loadChildren: ()=> import('./pages/preguntados/preguntados.module').then(m=> m.PreguntadosModule)},
   {path: '**', component: ErrorComponent}
 ];
 

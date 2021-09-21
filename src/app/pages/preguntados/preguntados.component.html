@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div
+      class="
+        col-12 col-md-8 col-lg-5
+        rounded
+        bg-dark
+        d-flex
+        flex-wrap
+        justify-content-center
+        p-5
+      "
+    >
+    <div class="pregunta">
+        <h3>{{pregunta.pregunta}}</h3>
+    </div>
+    <div class="opciones w-100 mt-5">
+        <button class="btn btn-pac w-100" *ngFor="let opcion of pregunta.opciones">
+            {{opcion}}
+        </button>
+    </div>
+    </div>
+  </div>
+  <p-toast position="top-center" key="bc"></p-toast>
+</div>
