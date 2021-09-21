@@ -11,14 +11,27 @@
         p-5
       "
     >
-    <div class="pregunta">
-        <h3>{{pregunta.pregunta}}</h3>
-    </div>
-    <div class="opciones w-100 mt-5">
-        <button class="btn btn-pac w-100" *ngFor="let opcion of pregunta.opciones">
-            {{opcion}}
+      <div class="pregunta">
+        <h3>{{ preguntas[preguntaNro].pregunta }}</h3>
+      </div>
+      <div class="opciones w-100 mt-5">
+        <button
+          class="btn btn-pac w-100"
+          (click)="validarRespuesta(preguntas[preguntaNro].correcta, opcion)"
+          *ngFor="let opcion of preguntas[preguntaNro].opciones"
+        >
+          {{ opcion }}
         </button>
+      </div>
     </div>
+  </div>
+  <div class="row mt-5 justify-content-center">
+    <div class="col-12 col-md-8 col-lg-5 d-flex justify-content-around">
+      <div class="col-6 col-md-4">
+        <button #btnr (click)="reserGame()" class="btn btn-pac w-100">
+          Otra Pregunta
+        </button>
+      </div>
     </div>
   </div>
   <p-toast position="top-center" key="bc"></p-toast>
