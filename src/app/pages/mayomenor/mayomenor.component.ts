@@ -33,7 +33,7 @@ export class MayomenorComponent implements OnInit {
   }
 
   cardsFill(){
-    this.apiS.setUrl('http://deckofcardsapi.com/api/deck/new/draw/?count=2');
+    this.apiS.setUrl('https://deckofcardsapi.com/api/deck/new/draw/?count=2');
     this.apiS.apiCall().subscribe((ret:any)=>{
       this.cardManage(ret.cards[0],this.mainCardTest);
       this.cardManage(ret.cards[1],this.guessCardTest);
