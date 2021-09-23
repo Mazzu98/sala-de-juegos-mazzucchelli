@@ -21,6 +21,7 @@ import { ChatComponent } from './pages/chat/chat.component';
 import { MayomenorModule } from './pages/mayomenor/mayomenor.module';
 import { PreguntadosModule } from './pages/preguntados/preguntados.module';
 import { PreguntaComponent } from './components/pregunta/pregunta.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { PreguntaComponent } from './components/pregunta/pregunta.component';
     ToastModule,
     BrowserAnimationsModule,
     MayomenorModule,
-    PreguntadosModule
+    PreguntadosModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,16 +13,19 @@
     >
       <div class="card-cont">
         <div #mainCard class="my-card bg-dark">
-          <div class="number-top">{{mainCardNumber}}</div>
+          <!-- <div class="number-top">{{mainCardNumber}}</div>
           <div class="number-bottom">{{mainCardNumber}}</div>
           <div class="circle big"></div>
-          <div class="circle small"></div>
+          <div class="circle small"></div> -->
+          <img [src]="mainCardTest.img" alt="">
         </div>
         <div #guessCard class="my-card bg-dark hide">
-          <div class="number-top">{{guessCardNumber}}</div>
+<!--           <div class="number-top">{{guessCardNumber}}</div>
           <div class="number-bottom">{{guessCardNumber}}</div>
           <div class="circle big"></div>
-          <div class="circle small"></div>
+          <div class="circle small"></div> -->
+          <img [src]="guessCardTest.img" alt="">
+
         </div>
       </div>
     </div>

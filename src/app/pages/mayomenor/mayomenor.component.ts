@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { MessageService } from 'primeng/api';
+import { ApisService } from 'src/app/services/apis.service';
 
 @Component({
   selector: 'app-mayomenor',
@@ -19,14 +20,44 @@ export class MayomenorComponent implements OnInit {
   mainCardNumber;
   guessCardNumber;
   isPlaying;
-  constructor(private renderer: Renderer2, private messageService: MessageService) {
-    this.isPlaying = false;
-    this.cards = [1,2,3,4,5,6,7,8,9,10,11,12]
-    this.mainCardNumber = this.getRandomNumber(1,12,0);
-    this.guessCardNumber = this.getRandomNumber(1,12,this.mainCardNumber);
+
+  mainCardTest = {img:'', value:0};
+  guessCardTest = {img:'', value:0};
+  constructor(private renderer: Renderer2, private messageService: MessageService, private apiS: ApisService) {
+    
   }
 
   ngOnInit(): void {
+    this.isPlaying = false;
+    this.cardsFill();
+  }
+
+  cardsFill(){
+    this.apiS.setUrl('http://deckofcardsapi.com/api/deck/new/draw/?count=2');
+    this.apiS.apiCall().subscribe((ret:any)=>{
+      this.cardManage(ret.cards[0],this.mainCardTest);
+      this.cardManage(ret.cards[1],this.guessCardTest);
+    });
+  }
+
+  cardManage(objCard, fillVar){
+    fillVar.img = objCard.image;
+    if(objCard.value == "ACE"){
+      fillVar.value = 1;
+    }
+    else if(objCard.value == "JACK"){
+      fillVar.value = 11;
+    }
+    else if (objCard.value == "QUEEN"){
+      fillVar.value = 12;
+
+    }
+    else if(objCard.value == "KING"){
+      fillVar.value = 13;
+    }
+    else{
+      fillVar.value = parseInt(objCard.value);
+    }
   }
 
   showHide(){
@@ -45,20 +76,25 @@ export class MayomenorComponent implements OnInit {
       this.isPlaying = true;
       this.showHide();
       setTimeout(()=>{
-        if(valor == 'mayor'){
-          if(this.guessCardNumber > this.mainCardNumber){
-            this.showToast('Ganaste Crack!', 'success');
-          }
-          else{
-            this.showToast('Perdiste bro', 'error');
-          }
+        if(this.guessCardTest.value == this.mainCardTest.value){
+          this.showToast('Empate!', 'warn');
         }
-        else if(valor == 'menor'){
-          if(this.guessCardNumber < this.mainCardNumber){
-            this.showToast('Ganaste Crack!', 'success');
+        else{
+          if(valor == 'mayor'){
+            if(this.guessCardTest.value > this.mainCardTest.value){
+              this.showToast('Ganaste Crack!', 'success');
+            }
+            else{
+              this.showToast('Perdiste bro', 'error');
+            }
           }
-          else{
-            this.showToast('Perdiste bro', 'error');
+          else if(valor == 'menor'){
+            if(this.guessCardTest.value < this.mainCardTest.value){
+              this.showToast('Ganaste Crack!', 'success');
+            }
+            else{
+              this.showToast('Perdiste bro', 'error');
+            }
           }
         }
         this.renderer.setProperty(this.btnr.nativeElement, 'disabled', false);
@@ -70,20 +106,12 @@ export class MayomenorComponent implements OnInit {
   }
 
   reserGame(){
-    this.mainCardNumber = this.getRandomNumber(1,12,0);
+    this.cardsFill();
     this.renderer.removeClass(this.mainCard.nativeElement,'hide');
     this.renderer.addClass(this.guessCard.nativeElement,'hide');
-    setTimeout(()=>{
-      this.guessCardNumber = this.getRandomNumber(1,12,this.mainCardNumber);
-    },1200)
     this.renderer.setProperty(this.btnM.nativeElement, 'disabled', false);
     this.renderer.setProperty(this.btnm.nativeElement, 'disabled', false);
     this.renderer.setProperty(this.btnr.nativeElement, 'disabled', true);
-  }
-
-  getRandomNumber(min, max, except) {
-    var num = Math.floor(Math.random() * (max - min + 1)) + min;
-    return (num === except ) ? this.getRandomNumber(min, max, except) : num;
   }
 
   showToast(message: string, color: string ) {
