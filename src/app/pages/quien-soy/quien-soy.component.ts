@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApisService } from 'src/app/services/apis.service';
 
 @Component({
   selector: 'app-quien-soy',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuienSoyComponent implements OnInit {
 
-  constructor() { }
+  githubData;
+
+  constructor(private apiS: ApisService) {
+    this.apiS.setUrl('https://api.github.com/users/Mazzu98');
+    this.apiS.apiCall().subscribe((data)=>{
+      this.githubData = data;
+      console.log(data);
+    });
+  }
 
   ngOnInit(): void {
   }

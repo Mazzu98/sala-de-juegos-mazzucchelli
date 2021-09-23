@@ -1,16 +1,38 @@
-<div  class="container mt-5">
-    <div id="quien" class="row justify-content-center text-center drop-component">
-        <div class="col-12 col-md-8 col-lg-6 bg-dark rounded-3 py-4 px-4">
-            <div class="row justify-content-center">
-                <h1 class="mb-4">Quien soy?</h1>
-                <h5 class="my-3">Mazzuccheli Puente Juan Ignacio</h5>
-                <div class="col-8 col-md-6 col-lg-6 mb-4">
-                    <div class="foto-cont bg-warning">
-                        <img src="./../../../assets/images/IMG_20200314_195714_127.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque sapiente doloremque, modi culpa enim dolor, labore corporis asperiores eaque saepe quis minima! Quibusdam, fugiat? Atque perferendis aut totam earum similique.</div>
+<div class="container mt-5">
+  <div id="quien" class="row justify-content-center text-center drop-component">
+    <div class="col-12 col-md-8 col-lg-6 bg-dark rounded-3 py-3 px-4">
+      <div class="row justify-content-center">
+        <h1 class="mb-2">Quien soy?</h1>
+        <h5 class="my-3">Mazzuccheli Puente Juan Ignacio</h5>
+        <div class="col-8 col-md-6 col-lg-6 mb-4">
+          <div class="foto-cont bg-warning">
+            <img [src]="githubData.avatar_url" alt="" />
+          </div>
         </div>
+      </div>
+      <div>
+        Soy estudiante de la UTN FRA, en esta pagina se muestran mis
+        conocimientos en angular 2 y typescript. Vas a poder jugar al ahorcado,
+        al mayor o menor y al preguntados
+      </div>
+      <br />
+      <div>
+        Tambien podes jugar al cuenta y acierta un juego propio que simplemente
+        consiste en presionar un boton exactamente a los 5:00 segundos,
+        desafiando los reflejos y precision del jugador
+      </div>
+      <br />
+      <br />
+      <div class="d-flex justify-content-center">
+          <a
+            class="d-flex flex-column justify-content-center link-pack"
+            href="{{ githubData.html_url }}"
+            target="_BLANK"
+          >
+            <i class="bi bi-github"></i>
+            <small>visitar repositorio</small>
+          </a>
+      </div>
     </div>
+  </div>
 </div>
